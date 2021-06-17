@@ -98,7 +98,7 @@ export default {
       vacation: { vacationTodayList: [], vacationWeekList: [] },
       diet: '',
       dialogDiet: false,
-      background: `${process.env.NUXT_ENV_APP_SERVER}background`,
+      background: '',
       dialogBackground: false,
       timerObj: null,
       timerObjNoti: null,

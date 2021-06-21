@@ -135,11 +135,13 @@ export default {
       this.loading = true
       try {
         const { data } = await this.$axios.get(`${process.env.NUXT_ENV_APP_SERVER}vacation.json`)
-        data.vacationTodayList = data.vacationTodayList.filter(member => !!member.member_name)
-        for (let i = 0, j = data.vacationWeekList.length; i < j; i++) {
-          data.vacationWeekList[i].member = data.vacationWeekList[i].member.filter(member => !!member.name)
+        if (data.vacationTodayList) {
+          data.vacationTodayList = data.vacationTodayList.filter(member => !!member.member_name)
+          for (let i = 0, j = data.vacationWeekList.length; i < j; i++) {
+            data.vacationWeekList[i].member = data.vacationWeekList[i].member.filter(member => !!member.name)
+          }
+          this.vacation = data
         }
-        this.vacation = data
       } finally {
         this.onDiet(true)
         this.onBackground(true)

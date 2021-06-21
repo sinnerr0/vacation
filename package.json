@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "NUXT_ENV_APP_SERVER=http://localhost:3001/ nuxt-ts",
+    "dev": "NUXT_ENV_APP_SERVER=http://localhost/ nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
